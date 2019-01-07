@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Sundeep Pothula">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Building Basic Element Table - artml</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Building Basic Element Table";
+    var mkdocs_page_input_path = "bet.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> artml</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../artml/">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../quickstart/">Quick Start</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Building Basic Element Table</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#basic-element-table">Basic Element table</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#creating-basic-element-table">Creating Basic element table</a></li>
+        
+            <li><a class="toctree-l4" href="#update-bet">Update BET</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Dataexploration/">Real Time Data Exploration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../models/">Building Real Time Models</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">About</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../license/">License</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../release/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../blog/">Blog</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../demo/">Demo Project</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../contributing/">Contributing</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">artml</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>User Guide &raquo;</li>
+        
+      
+    
+    <li>Building Basic Element Table</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="basic-element-table">Basic Element table</h2>
+<h4 id="creating-basic-element-table">Creating Basic element table</h4>
+<p>For using artml, a basic element table is created first which stores key information for each feature in summarized basic elements. This BET is key for all the successive steps. After generating BET, this table can be used for Data exploration &amp; for Modeling. All the basic elements can be update in real time (incrementally or decrementally), using <code>learn</code> or <code>forget</code> functions. As, BET is updated with the new Data, we can update the model in real time.</p>
+<p><strong>create_bet</strong></p>
+<p>artml library has functions for building and updating the BET. Use these functions, for the streaming data to update the BET. Use <code>create_bet</code> function to build the BET. The only field you need to input is Dataframe or Data to build the BET. Output created is a Table in a Pandas dataframe format.</p>
+<pre><code>  #creating the basic elements table for the dataset.
+  from artml import bet
+  BET =  bet.create_bet(DataToCreateBet)
+</code></pre>
+<p>BET need to be created only once at the begininng, later on to make any further changes use <code>learn</code> or <code>forget</code> functions.</p>
+<h4 id="update-bet">Update BET</h4>
+<p><strong>learn</strong></p>
+<p>The artml <code>learn</code> updates the basic elements table with any new incoming data. arguments needed for this function are BET (variable assigned for the created BET) and new dataframe. It returns the new updated BET as a dataframe.</p>
+<pre><code>  BET_New = bet.learn(BET, NewData)
+</code></pre>
+<p><strong>forget</strong></p>
+<p>Similarly like learn function to update BET with the new data, if we want to remove the effect of some data from the BET we can use <code>forget</code> function. arguments needed for this function are BET (variable assigned for the created BET) and the data that needs to be deleted (Input as a dataframe). It returns the new BET as a dataframe.</p>
+<pre><code>  BET_updated = bet.forget(BET, Data)
+</code></pre>
+<p><strong>learnbyindex</strong></p>
+<p><code>learnbyindex</code> function is used to update BET at atomic level, we can update any of the feature with the new values. This function takes Basic Element Table and feature_names &amp; values as arguments to update the given list of feature column &amp; rows in the BET by corresponding values.</p>
+<pre><code>  BET_updated = bet.learnbyindex(Basic_Element_Table, 'feature_1','feature_2', 1, 2 )
+  #Above function updates feature_1, feature_2 in the BET by values 1 and 2 respectively
+</code></pre>
+<p><strong>forgetbyindex</strong></p>
+<p><code>forgetbyindex</code> function deletes the effect of given input values for corresponding given features. This function takes Basic Element Table and feature name &amp; values as arguments to update the given list of features in the BET by corresponding values (deleting effect of those values from BET).</p>
+<pre><code>  BET_updated = bet.forgetbyindex(Basic_Element_Table, 'feature_1','feature_2', 1, 2 )
+  #Above function reduces feature_1, feature_2 in the BET by values 1 and 2 respectively
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Dataexploration/" class="btn btn-neutral float-right" title="Real Time Data Exploration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../quickstart/" class="btn btn-neutral" title="Quick Start"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© Copyright 2018-2019 Sundeep Pothula.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../quickstart/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Dataexploration/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

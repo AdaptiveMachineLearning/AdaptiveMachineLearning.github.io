@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Sundeep Pothula">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Building Real Time Models - artml</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Building Real Time Models";
+    var mkdocs_page_input_path = "models.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> artml</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../artml/">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../quickstart/">Quick Start</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bet/">Building Basic Element Table</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Dataexploration/">Real Time Data Exploration</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Building Real Time Models</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#artml-models">ARTML Models</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#classification-models">Classification models</a></li>
+        
+            <li><a class="toctree-l4" href="#regression-models">Regression Models</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">About</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../license/">License</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../release/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../blog/">Blog</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../demo/">Demo Project</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../contributing/">Contributing</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">artml</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>User Guide &raquo;</li>
+        
+      
+    
+    <li>Building Real Time Models</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="artml-models">ARTML Models</h2>
+<p>ART-ML technique can be applied for all the linear regression and classification algorithms like MLR, Naïve Bayesian, SVM, LDA, PCA etc. This section details how to use artml library for building different realtime regression &amp; classification models.</p>
+<h3 id="classification-models">Classification models</h3>
+<h4 id="naive-bayesian">Naive Bayesian</h4>
+<p>The Naïve Bayesian classifier is based on Bayes’ theorem with independence assumptions between attributes. In the real time version of Bayesian classifiers, we calculate the likelihood and the prior probabilities from the Basic Elements Table (BET) which can be updated in real time.</p>
+<p>We have Gaussian &amp; Multinomial Regression models in artml library. For the numerical attributes likelihood can be calculated from the normal distribution equation and hence Guassian method can be used. for categorical data go for multinomial model.</p>
+<pre><code>  from artml.naive_bayes import GaussianNB
+  gnb = GaussianNB()
+  gnb.fit(BET, 'Target1','Target2')
+  gnb.predict(Testing_data)
+  gnb.score(TestingData, y_test)
+</code></pre>
+<p>After importing <code>GaussianNB</code>, for fitting the classifier input Bascic Element table (BET) &amp; target names. Even if it a binary classification task, two target names 'class' &amp; 'notclass' should be given. For predicting give testing dataframe as the input.</p>
+<pre><code>  from artml.naive_bayes import MultinomialNB
+  mnb = MultinomialNB()
+  mnb.fit(BET, 'Target1','Target2')
+  mnb.predict(Testing_data)
+  mnb.score(TestingData, y_test)
+</code></pre>
+<p>Using <code>MultinomialNB</code> is similar to GaussianNB. Follow similar syntax styles for categorical data also. Makesure to onehot encode all the categorical datavalues while building BET.</p>
+<h4 id="linear-discriminant-analysis">Linear Discriminant Analysis</h4>
+<p>LDA is based upon the concept of searching for a linear combination of attributes that best separates two classes (0 and 1) of a binary attribute. (LDA is only for binary classification)</p>
+<pre><code>  from artml.models import lda
+  lda = lda.LinearDiscriminantAnalysis()
+  lda.fit(BET, 'Target_name')
+  lda.predict(TestingData)
+</code></pre>
+<p>for fitting the 'lda' classifier, Basic Element table (BET) and Targetname are the only arguments required. Unlike Naivebayes, we can give only one target name (instead of churn and notchurn give only churn variable) in the input. For predicting give testing dataframe as the input. For multiclass classification use <code>QDA</code> instead of LDA.</p>
+<h4 id="quadratic-discriminant-analysis">Quadratic Discriminant Analysis</h4>
+<p>QDA is a general discriminant function with quadratic decision boundaries which can be used to classify datasets with two or more classes.</p>
+<pre><code>  from artml.models import lda
+  QDA = QDA.QuadraticDiscriminantAnalysis()
+  QDA.fit(BET, 'Target_name')
+  QDA.predict(TestingData)
+</code></pre>
+<p>arguments for fitting the classifier and making the predictions are similar to <code>lda</code> classification.</p>
+<p><strong>Note:</strong> Since <code>LDA</code> &amp; <code>QDA</code> involves inversion of the covariance matrices, makesure that it is not a singular matrix. (Avoid null features &amp; multicollinearity)</p>
+<h4 id="support-vector-classifier">Support Vector classifier</h4>
+<p>Support Vector Machine (SVM) performs classification by finding the hyperplane that maximizes the margin between the two classes. (SVC can be used for binary or multiclass classification)</p>
+<pre><code>  from artml.models import svm
+  svc = svm.LinearSVC()
+  svc.fit(BET, 'Target_name1', 'Target_name1' , c= 0.0001)
+  svc.predict(TestingData)
+  svc.score(TestingData, y_test)
+</code></pre>
+<p>After importing <code>LinearSVC</code>, for fitting the classifier input Bascic Element table (BET) &amp; target names. Even if it a binary classification task, two target names 'class' &amp; 'notclass' should be given like we did in GaussianNB. Apart form BET and target names, value of c should be given as input. <code>c</code> is the tuning parameter and it should be adjusted to improve the classifier performance. For predicting give testing dataframe as the input.</p>
+<p><strong>Note:</strong> Vary <code>c</code> value in the tenth powers to find the optimum value. [1,10,100,1000,0.1,0.001,...]</p>
+<h3 id="regression-models">Regression Models</h3>
+<h4 id="multiple-linear-regression">Multiple Linear regression</h4>
+<p>Multiple Linear Regression (MLR) is a method used to model the linear relationship between a target (dependent variable) and one or more attributes (independent variables). Using <code>MLR</code> in artml is very similar to sklearn regression models.</p>
+<pre><code>  from artml.models import MLR
+  lr = MLR.LinearRegression()
+  lr.fit(BET, 'Target')
+  lr.predict(TestingData)
+</code></pre>
+<p>Arguments to fit the MLR model are only BET &amp; target name. Use artml.metrics to find the R2 and other regression metrics.</p>
+<p><strong>Note:</strong> Avoid Multicollinearity in the features. Multicollinearity leads to highly unreliable regression coefficient estimates and large errors in the test data. Use regression feature selection techniques for choosing the best features for MLR</p>
+<h4 id="ridgemlr">RidgeMLR</h4>
+<p>artml also has the flexibility for using the regularized Linear regression model. Since Lasso regression doesnt have an analytical solution, we can use Ridge regression model and update it in real time using the Basic Element Table.</p>
+<pre><code>  from artml.models import MLR
+  Rlr = MLR.RidgeRegression()
+  Rlr.fit(BET, 'Target', c=0.1)
+  Rlr.predict(TestingData)
+</code></pre>
+<p>In the above arguments, <code>c</code> is the regularization parameter and it can be adjusted to reduce the overfitting by penalizing the larger weights in the model parameters. </p>
+<h4 id="support-vector-regression">Support Vector regression</h4>
+<p>LinearSVR is one of the powerful model for regression. Implementation of Support vector regression is similar to SVC. By building new features we can introduce nonlinearity into the <code>LinearSVR</code> model.</p>
+<pre><code>   from artml.models import svm
+   svr = svm.LinearSVR()
+   svr.fit(BET, 'Target', c=0.1)
+   svr.predict(TestingData)
+</code></pre>
+<p>Other than BET and targetname we have <code>c</code> tuning parameter in the SVR. default value of c is 0.1 and it can be adjusted to improve the model performance.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../license/" class="btn btn-neutral float-right" title="License">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Dataexploration/" class="btn btn-neutral" title="Real Time Data Exploration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© Copyright 2018-2019 Sundeep Pothula.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Dataexploration/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../license/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

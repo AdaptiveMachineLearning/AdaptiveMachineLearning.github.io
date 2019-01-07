@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Sundeep Pothula">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Demo Project - artml</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Demo Project";
+    var mkdocs_page_input_path = "demo.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> artml</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../artml/">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Guide</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../quickstart/">Quick Start</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../bet/">Building Basic Element Table</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Dataexploration/">Real Time Data Exploration</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../models/">Building Real Time Models</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">About</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../license/">License</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../release/">Release Notes</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../faq/">FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../blog/">Blog</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Demo Project</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#digit-classification-using-artml-library">Digit classification using artml library</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../contributing/">Contributing</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">artml</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Resources &raquo;</li>
+        
+      
+    
+    <li>Demo Project</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="digit-classification-using-artml-library">Digit classification using artml library</h3>
+<p>Handwritten Digit classification is one of the standard mutliclass classification tasks in Machine learning. Although this is not a core application for using real time learning, To understand the usage of library and the power of linear models for complicated classification tasks, we opted this for demonstrating the artml API.</p>
+<p><img alt="" src="../img/digits_demo.JPG" /></p>
+<p>In this demo project, you will know:</p>
+<ul>
+<li>Sample Preprocessing techniques</li>
+<li>Building Basic Element table</li>
+<li>Real Time Univariate Data Exploration</li>
+<li>Building Real time Multiclass classification Models</li>
+<li>Updating the BET and Models with the new dataset</li>
+</ul>
+<p>Let’s get started. For python code, check the <a href="https://github.com/AdaptiveMachineLearning/artml/blob/master/examples/Digits_Classification.ipynb">link.</a></p>
+<p>First step, Load the digits dataset (8*8) from the sklearn datasets.</p>
+<pre><code>from sklearn.datasets import load_digits
+digits = load_digits()
+digits.images.shape
+</code></pre>
+<p>Preprocess the data for one hot encoding the target feature and dividing the data into testing &amp; training sets.</p>
+<pre><code>from sklearn.model_selection import train_test_split
+Xtrain, Xtest, ytrain, ytest = train_test_split(X, y, random_state=0)
+y1 = pd.DataFrame(ytrain)
+y2 = pd.get_dummies(y1[0])
+y2.columns = [str('Target_') +str(x) for x in range(0,10)]
+</code></pre>
+<p>Since, we use QDA and SVC for classification, we need to make sure that the train data is not a singular matrix. Hence avoid null features from the dataset. [In the data exploration tasks observe these features and remove them while building the models]</p>
+<p>Then import artml library by following the installation guidelines and build the Basic Element table.</p>
+<pre><code>from artml import bet
+BET1 = bet.create_bet(train_data1)
+</code></pre>
+<p>In the above case for explanation purpose, we divided the training data into two sets. First we will build models using only some part of the data. Later, we update the models just by using the new data.</p>
+<pre><code>from artml.explore import stats
+stats.univariate(BET1)
+</code></pre>
+<p>Then use the above BET table for building different classification models as shown below.</p>
+<pre><code>from artml.models import naive_bayes
+gnb = naive_bayes.GaussianNB()
+gnb.fit(BET1, 'Target_0', 'Target_1','Target_2', 'Target_3', 'Target_4', 'Target_5', 'Target_6', 'Target_7','Target_8', 'Target_9')
+gnb.score(Xtest.as_matrix(), ytest)
+</code></pre>
+<p>for the GaussianNB model, we got the accuracy of 84.88% But, lets try and check the other models.</p>
+<pre><code>from artml.models import QDA
+qda = QDA.QuadraticDiscriminantAnalysis()
+qda.fit(BET1, 'Target_0', 'Target_1','Target_2', 'Target_3', 'Target_4', 'Target_5', 'Target_6', 'Target_7','Target_8', 'Target_9')
+qda.score(Xtest, ytest)
+</code></pre>
+<p>Eventhough QDA &amp; SVC are powerful linear classification models we got a very low accuracy_score while testing these models. This might be because of the small amount of the training data. As, Naive bayes also works at small training datasets we got good accuracies in that case.</p>
+<pre><code>from artml.models import svm
+svc = svm.LinearSVC()
+svc.fit(BET2, 'Target_0', 'Target_1','Target_2', 'Target_3', 'Target_4', 'Target_5', 'Target_6', 'Target_7','Target_8', 'Target_9', c=0.00001)
+svc.score(Xtest, ytest)
+</code></pre>
+<p>Now lets try improving the model accuracy by using more training data instead of building complex models. for updating the model in real time first update the BET with new data using the <code>learn</code> function.</p>
+<pre><code>BET2 = bet.learn(BET1, train_data2)
+</code></pre>
+<p>Again, run the same above models using the new BET (New BET captures the total lager amount of training data in it!)
+After running the same above models we can observe that Naive_Bayes model accuracy slightly decreased - 82%. But <code>QDA</code> and SVC model accuracies largely improved to <code>93%</code> &amp; 45%. Below is the confusion matrix for the QDA predictions.</p>
+<p><img alt="" src="../img/confusion_digits.JPG" /></p>
+<p>Hence we can clearly see that QDA is a powerful linear model even for multiclass classification given enough amount of data. So, we can use these kind of models in real scenarios where we get continous data and where models need to be updated in real time for generating real time insights.</p>
+<p>Use this simple yet  powerful API for building the realtime models. If you have an application of artml that is concise and powerful, please consider adding it to our collection of examples.</p>
+<p>Happy Learning!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../contributing/" class="btn btn-neutral float-right" title="Contributing">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../blog/" class="btn btn-neutral" title="Blog"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>© Copyright 2018-2019 Sundeep Pothula.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../blog/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../contributing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
